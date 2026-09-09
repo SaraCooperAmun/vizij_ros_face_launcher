@@ -26,7 +26,7 @@ sleep 1
 echo "Starting tutorial-agent-face..."
 cd "$REPO_DIR" || exit 1
 
-pnpm run dev:face-ros4hri-demo --host &
+pnpm run dev:demo-ros4hri-face --host &
 DEV_PID=$!
 
 echo "Waiting for dev server..."

@@ -178,7 +178,7 @@ http://localhost:5173
 The launcher starts the following Vizij web command:
 
 ```bash
-pnpm run dev:face-ros4hri-demo --host
+pnpm run dev:demo-ros4hri-face --host
 ```
 
 This launches the **ROS4HRI face demo** tuned by Sara and based on `vizij-web` apps. 
