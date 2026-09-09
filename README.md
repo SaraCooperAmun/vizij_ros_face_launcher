@@ -64,6 +64,10 @@ Clone:
 ```bash
 git clone https://github.com/SaraCooperAmun/vizij_face_bridge
 git clone https://github.com/SaraCooperAmun/vizij_ros_face_launcher
+git clone https://github.com/ros4hri/interaction_skills
+git clone https://github.com/ros4hri/communication_skills.git
+git clone https://github.com/EMOROBOCARE/coqui_tts
+git clone https://github.com/SaraCooperAmun/emojivoice_tts
 ```
 
 Note: remaining ones will be added here. 
@@ -78,10 +82,9 @@ Clone it somewhere on the robot, for example:
 
 ```bash
 cd ~/sara_vizij
-git clone <vizij-web-repository>
+git clone https://github.com/SaraCooperAmun/vizij-web
 ```
 
-The repository URL can be added here.
 
 After cloning, the directory should contain the Vizij web project, for example:
 
