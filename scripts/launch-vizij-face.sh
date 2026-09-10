@@ -1,7 +1,18 @@
 #!/bin/bash
 
-# Vizij web project
-REPO_DIR="/home/nvidia/sara_vizij/vizij-web"
+REPO_DIR="${VIZIJ_REPO_DIR}"
+
+FACE_ASSET="${VIZIJ_FACE_ASSET}"
+
+if [ -z "$REPO_DIR" ]; then
+    echo "ERROR: VIZIJ_REPO_DIR is not set"
+    exit 1
+fi
+
+if [ -z "$FACE_ASSET" ]; then
+    echo "ERROR: VIZIJ_FACE_ASSET is not set"
+    exit 1
+fi
 
 # URL opened by Firefox
 URL="http://localhost:5173"
@@ -9,7 +20,7 @@ URL="http://localhost:5173"
 # Clean up when Ctrl+C or termination happens
 cleanup() {
     echo ""
-    echo "Stopping tutorial agent face..."
+    echo "Stopping demo-ros4hri-face.."
     kill "$DEV_PID" 2>/dev/null || true
     killall firefox 2>/dev/null || true
     exit 0
@@ -23,9 +34,10 @@ killall pnpm 2>/dev/null || true
 killall node 2>/dev/null || true
 sleep 1
 
-echo "Starting tutorial-agent-face..."
+echo "Starting demo-ros4hri-face..."
 cd "$REPO_DIR" || exit 1
 
+export VITE_FACE_ASSET="$FACE_ASSET"
 pnpm run dev:demo-ros4hri-face --host &
 DEV_PID=$!
 
